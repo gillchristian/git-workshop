@@ -8,7 +8,7 @@ import {
 export default function WithMarkdown({image}) {
   return (
     <div>
-      <Heading caps fit size={1} textColor="primary">
+      <Heading caps fit size={1} >
         Inline Markdown
       </Heading>
       <Markdown>{content(image)}</Markdown>

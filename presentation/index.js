@@ -22,8 +22,9 @@ import {
   Text
 } from "spectacle";
 
-import Intro from "./template/01.Intro";
-import Second from "./template/02.Second";
+import Intro from "./01.Intro";
+import Me from "./02.Me";
+import Roadmap from "./03.Roadmap";
 import Code from "./template/03.Code";
 import Progressive from "./template/04.Progressive";
 import Flexbox from "./template/05.Flexbox";
@@ -46,6 +47,7 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
+  gitLogo: require("../assets/git-logo.png"),
   city: require("../assets/city.jpg"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
@@ -55,29 +57,27 @@ const images = {
 preloader(images);
 
 const theme = createTheme({
-  primary: "#ff4081"
+  primary: "#e06666",
+  secondary: "#333333",
+  tertiary: "white",
+  quaternary: "white"
 });
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["zoom", "slide"]} transitionDuration={500}>
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Intro />
+        <Deck transition={["slide"]} transitionDuration={750}>
+          <Slide bgColor="secondary">
+            <Intro image={images.gitLogo.replace("/", "")}/>
           </Slide>
-          <Slide
-            transition={["slide"]}
-            bgColor="black"
-            notes="You can even put notes on your slide. How awesome is that?"
-          >
-            <Second image={images.kat.replace("/", "")}/>
+          <Slide bgColor="primary">
+            <Me />
           </Slide>
-          <Slide
-            transition={["zoom", "fade"]}
-            bgColor="primary"
-            notes="<ul><li>talk about that</li><li>and that</li></ul>"
-          >
+          <Slide bgColor="secondary">
+            <Roadmap />
+          </Slide>
+          <Slide bgColor="primary">
             <Code />
           </Slide>
           <Slide
@@ -93,7 +93,7 @@ export default class Presentation extends React.Component {
           <Slide transition={["slide"]} bgColor="black">
             <Cita />
           </Slide>
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
+          <Slide transition={["spin", "zoom"]} bgColor="primary">
             <WithMarkdown image={images.markdown.replace("/", "")}/>
           </Slide>
           <Slide transition={["slide", "spin"]} bgColor="primary">
