@@ -66,13 +66,25 @@ export default class Presentation extends React.Component {
           <Slide transition={["zoom"]} bgColor="primary">
             <Intro />
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+          <Slide
+            transition={["slide"]}
+            bgColor="black"
+            notes="You can even put notes on your slide. How awesome is that?"
+          >
             <Second image={images.kat.replace("/", "")}/>
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+          <Slide
+            transition={["zoom", "fade"]}
+            bgColor="primary"
+            notes="<ul><li>talk about that</li><li>and that</li></ul>"
+          >
             <Code />
           </Slide>
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+          <Slide
+            transition={["slide"]}
+            bgImage={images.city.replace("/", "")}
+            bgDarken={0.75}
+          >
             <Progressive />
           </Slide>
           <Slide transition={["zoom", "fade"]} bgColor="primary">
