@@ -1,39 +1,53 @@
 import React from "react";
 
 import {
-  Appear,
+  Heading,
   List,
   ListItem,
   Layout,
   Fill
 } from "spectacle";
 
+const left = [
+  'Sistemas de versionado',
+  'Git',
+  'Setup',
+  'Clientes',
+  'Git como servicio',
+  'Repositorios',
+  'Add & Commit'
+];
+
+const right = [
+  'Push',
+  'Branches',
+  'Update & Merge',
+  'Tags',
+  'Logs',
+  'Replazar cambios locales',
+  'Conflictos con el Merge'
+];
+
+const listItems = list => list.map(
+  (item, key) => <ListItem key={key}>{item}</ListItem>
+);
+
 export default function Roadmap() {
   return (
-    <Layout>
-    <Fill>
-    <List ordered textColor="tertiary">
-      <Appear><ListItem>Sistemas de versionado</ListItem></Appear>
-      <Appear><ListItem>Git</ListItem></Appear>
-      <Appear><ListItem>Setup</ListItem></Appear>
-      <Appear><ListItem>Clientes</ListItem></Appear>
-      <Appear><ListItem>Git como servicio</ListItem></Appear>
-      <Appear><ListItem>Repositorios: init & clone</ListItem></Appear>
-      <Appear><ListItem>Workflow</ListItem></Appear>
-      <Appear><ListItem>Add & Commit</ListItem></Appear>
-      <Appear><ListItem>Pushing changes</ListItem></Appear>
-    </List>
-    </Fill>
-    <Fill>
-      <List ordered textColor="tertiary">
-        <Appear><ListItem>Branching</ListItem></Appear>
-        <Appear><ListItem>Update & Merge</ListItem></Appear>
-        <Appear><ListItem>Tags???</ListItem></Appear>
-        <Appear><ListItem>Log</ListItem></Appear>
-        <Appear><ListItem>Replace local changes</ListItem></Appear>
-        <Appear><ListItem>Merge conflicts =/</ListItem></Appear>
-      </List>
-    </Fill>
-    </Layout>
+    <div>
+      <Heading>Contenido</Heading>
+      <Layout>
+        <Fill>
+          <List ordered textColor="tertiary">
+            {listItems(left)}
+          </List>
+        </Fill>
+        <Fill>
+          <List ordered textColor="tertiary">
+            {listItems(right)}
+          </List>
+        </Fill>
+      </Layout>
+    </div>
   );
 }

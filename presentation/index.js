@@ -25,13 +25,12 @@ import {
 import Intro from "./01.Intro";
 import Me from "./02.Me";
 import Roadmap from "./03.Roadmap";
-import Code from "./template/03.Code";
-import Progressive from "./template/04.Progressive";
-import Flexbox from "./template/05.Flexbox";
-import Cita from "./template/06.Cita";
-import WithMarkdown from "./template/07.WithMarkdown";
-import Transition from "./template/08.Transition";
-import WithList from "./template/09.WithList";
+import Problem from "./04.Problem";
+import Solution from "./05.Solution";
+import AllTheThings from "./06.AllTheThings";
+import Git from "./07.Git";
+import Setup from "./08.Setup";
+import Clients from "./09.Clients";
 import WithApp from "./template/10.WithApp";
 import End from "./template/11.End";
 
@@ -47,11 +46,15 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  gitLogo: require("../assets/git-logo.png"),
+  allTheThings: require("../assets/all-the-things.jpg"),
   city: require("../assets/city.jpg"),
+  foldersMess: require("../assets/git-mess.png"),
+  foldersBetter: require("../assets/git-better.png"),
+  gitLogo: require("../assets/git-logo.png"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  markdown: require("../assets/markdown.png"),
+  setup: require("../assets/setup.jpg")
 };
 
 preloader(images);
@@ -60,7 +63,7 @@ const theme = createTheme({
   primary: "#e06666",
   secondary: "#333333",
   tertiary: "white",
-  quaternary: "white"
+  quaternary: "#22BAD9"
 });
 
 export default class Presentation extends React.Component {
@@ -78,29 +81,27 @@ export default class Presentation extends React.Component {
             <Roadmap />
           </Slide>
           <Slide bgColor="primary">
-            <Code />
+            <Problem
+              images={{
+                mess: images.foldersMess.replace("/", ""),
+                better: images.foldersBetter.replace("/", ""),
+              }}
+            />
           </Slide>
-          <Slide
-            transition={["slide"]}
-            bgImage={images.city.replace("/", "")}
-            bgDarken={0.75}
-          >
-            <Progressive />
+          <Slide bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+            <Solution />
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Flexbox />
+          <Slide transition={["slide"]} bgColor="tertiary">
+            <AllTheThings image={images.allTheThings.replace("/", "")} />
           </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-            <Cita />
+          <Slide bgColor="secondary" align="center center">
+            <Git image={images.gitLogo.replace("/", "")} />
           </Slide>
-          <Slide transition={["spin", "zoom"]} bgColor="primary">
-            <WithMarkdown image={images.markdown.replace("/", "")}/>
+          <Slide bgImage={images.setup.replace("/", "")} bgDarken={0.75}>
+            <Setup />
           </Slide>
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Transition />
-          </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <WithList />
+          <Slide bgColor="secondary" textColor="primary">
+            <Clients />
           </Slide>
           <Slide transition={["slide"]} bgColor="primary">
             <WithApp />
