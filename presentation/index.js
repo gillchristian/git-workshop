@@ -31,7 +31,7 @@ import AllTheThings from "./06.AllTheThings";
 import Git from "./07.Git";
 import Setup from "./08.Setup";
 import Clients from "./09.Clients";
-import WithApp from "./template/10.WithApp";
+import GaaS from "./10.GaaS";
 import End from "./template/11.End";
 
 // Import image preloader util
@@ -48,6 +48,7 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   allTheThings: require("../assets/all-the-things.jpg"),
   city: require("../assets/city.jpg"),
+  client: require("../assets/client.png"),
   foldersMess: require("../assets/git-mess.png"),
   foldersBetter: require("../assets/git-better.png"),
   gitLogo: require("../assets/git-logo.png"),
@@ -100,13 +101,13 @@ export default class Presentation extends React.Component {
           <Slide bgImage={images.setup.replace("/", "")} bgDarken={0.75}>
             <Setup />
           </Slide>
-          <Slide bgColor="secondary" textColor="primary">
+          <Slide bgImage={images.client.replace("/", "")} bgDarken={0.75}>
             <Clients />
           </Slide>
-          <Slide transition={["slide"]} bgColor="primary">
-            <WithApp />
+          <Slide transition={["spin", "slide"]} bgColor="secondary">
+            <GaaS />
           </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
+          <Slide bgColor="tertiary">
             <End image={images.logo}/>
           </Slide>
         </Deck>
