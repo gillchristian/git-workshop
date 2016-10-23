@@ -1,11 +1,19 @@
 import React from "react";
 
 import {
-  Heading
+  Heading,
+  Link
 } from "spectacle";
 
 export default function Setup() {
   return (
-    <Heading caps textColor="primary">Setup</Heading>
+    <div>
+      <Heading caps textColor="primary">Setup</Heading>
+      <Heading size={4}>
+        <Link href="https://git-scm.com/download" target="_blank" textColor="quaternary">
+          git-scm.com/download
+        </Link>
+      </Heading>
+    </div>
   );
 }
