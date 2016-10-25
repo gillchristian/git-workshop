@@ -14,22 +14,24 @@ const left = [
   'Setup',
   'Clientes',
   'Git como servicio',
-  'Repositorios',
-  'Add & Commit'
+  'Repositorios'
 ];
 
 const right = [
-  'Push',
+  'Commit',
+  'Push & Remote',
   'Branches',
   'Update & Merge',
-  'Tags',
   'Logs',
-  'Replazar cambios locales',
-  'Conflictos con el Merge'
+  'Replazar cambios locales'
 ];
 
-const listItems = list => list.map(
-  (item, key) => <ListItem key={key}>{item}</ListItem>
+const listItems = list => (
+  <List ordered textColor="tertiary">
+    {list.map(
+      (item, key) => <ListItem key={key}>{item}</ListItem>
+    )}
+  </List>
 );
 
 export default function Roadmap() {
@@ -38,14 +40,10 @@ export default function Roadmap() {
       <Heading>Contenido</Heading>
       <Layout>
         <Fill>
-          <List ordered textColor="tertiary">
-            {listItems(left)}
-          </List>
+          {listItems(left)}
         </Fill>
         <Fill>
-          <List ordered textColor="tertiary">
-            {listItems(right)}
-          </List>
+          {listItems(right)}
         </Fill>
       </Layout>
     </div>

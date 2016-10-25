@@ -32,7 +32,14 @@ import Git from "./07.Git";
 import Setup from "./08.Setup";
 import Clients from "./09.Clients";
 import GaaS from "./10.GaaS";
-import End from "./template/11.End";
+import HowItWorks from "./11.HowItWorks";
+import Create from "./12.Create";
+import AddCommit from "./13.AddCommit";
+import Push from "./14.Push";
+import Branches from "./15.Branches";
+import UpdateAndMerge from "./16.UpdateAndMerge";
+import Logs from "./17.Logs";
+import Thanks from "./18.Thanks";
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -47,15 +54,18 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   allTheThings: require("../assets/all-the-things.jpg"),
+  branches: require("../assets/branches.png"),
   city: require("../assets/city.jpg"),
   client: require("../assets/client.png"),
   foldersMess: require("../assets/git-mess.png"),
   foldersBetter: require("../assets/git-better.png"),
   gitLogo: require("../assets/git-logo.png"),
+  howGitWorks: require("../assets/how-git-works.png"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
   markdown: require("../assets/markdown.png"),
-  setup: require("../assets/setup.jpg")
+  setup: require("../assets/setup.jpg"),
+  thanks: require("../assets/thanks.gif"),
 };
 
 preloader(images);
@@ -107,8 +117,29 @@ export default class Presentation extends React.Component {
           <Slide transition={["spin", "slide"]} bgColor="secondary">
             <GaaS />
           </Slide>
-          <Slide bgColor="tertiary">
-            <End image={images.logo}/>
+          <Slide bgColor="primary" bgColor="#4c0d09">
+            <HowItWorks image={images.howGitWorks.replace("/", "")} />
+          </Slide>
+          <Slide bgColor="primary">
+            <Create />
+          </Slide>
+          <Slide bgColor="primary">
+            <AddCommit />
+          </Slide>
+          <Slide bgColor="primary">
+            <Push />
+          </Slide>
+          <Slide bgColor="black">
+            <Branches image={images.branches.replace("/", "")} />
+          </Slide>
+          <Slide bgColor="primary">
+            <UpdateAndMerge />
+          </Slide>
+          <Slide bgColor="primary">
+            <Logs />
+          </Slide>
+          <Slide bgColor="secondary">
+            <Thanks image={images.thanks.replace("/", "")} />
           </Slide>
         </Deck>
       </Spectacle>

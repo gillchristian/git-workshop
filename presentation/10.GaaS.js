@@ -3,17 +3,26 @@ import React from "react";
 import {
   Layout,
   Fill,
-  Heading
+  Heading,
+  Link
 } from "spectacle";
 
 export default function GaaS() {
   return (
     <Layout>
       <Fill>
-        <Heading textColor="quaternary">Github</Heading>
+        <Heading>
+          <Link href="https://github.com" target="_blank" textColor="quaternary">
+            Github
+          </Link>
+        </Heading>
       </Fill>
       <Fill>
-        <Heading textColor="quaternary">Bitbucket</Heading>
+        <Heading textColor="quaternary">
+          <Link href="https://bitbucket.com" target="_blank" textColor="quaternary">
+            Bitbucket
+          </Link>
+        </Heading>
       </Fill>
     </Layout>
   );
