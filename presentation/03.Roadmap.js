@@ -23,11 +23,11 @@ const right = [
   'Branches',
   'Update & Merge',
   'Logs',
-  'Replazar cambios locales'
+  'Recursos útiles'
 ];
 
 const listItems = list => (
-  <List ordered textColor="tertiary">
+  <List textColor="tertiary">
     {list.map(
       (item, key) => <ListItem key={key}>{item}</ListItem>
     )}

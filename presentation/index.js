@@ -39,7 +39,8 @@ import Push from "./14.Push";
 import Branches from "./15.Branches";
 import UpdateAndMerge from "./16.UpdateAndMerge";
 import Logs from "./17.Logs";
-import Thanks from "./18.Thanks";
+import Resources from "./18.Resources";
+import Thanks from "./19.Thanks";
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -137,6 +138,9 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide bgColor="primary">
             <Logs />
+          </Slide>
+          <Slide bgColor="primary">
+            <Resources />
           </Slide>
           <Slide bgColor="secondary">
             <Thanks image={images.thanks.replace("/", "")} />
