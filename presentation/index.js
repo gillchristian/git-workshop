@@ -69,7 +69,9 @@ const images = {
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
   markdown: require("../assets/markdown.png"),
+  office: require("../assets/office.jpg"),
   setup: require("../assets/setup.jpg"),
+  terminal: require("../assets/terminal.png"),
   thanks: require("../assets/thanks.gif"),
 };
 
@@ -122,6 +124,8 @@ export default class Presentation extends React.Component {
             bgColor="secondary"
             align="center center"
             notes={titlelize(notes.git)}
+            bgImage={images.terminal.replace("/", "")}
+            bgDarken={0.75}
           >
             <Git image={images.gitLogo.replace("/", "")} />
           </Slide>
@@ -140,8 +144,8 @@ export default class Presentation extends React.Component {
             <Clients />
           </Slide>
           <Slide
-            transition={["spin", "slide"]}
-            bgColor="secondary"
+            bgImage={images.office.replace("/", "")}
+            bgDarken={0.75}
             notes={titlelize(notes.gaas)}
           >
             <GaaS />
