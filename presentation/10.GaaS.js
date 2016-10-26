@@ -9,21 +9,22 @@ import {
 
 export default function GaaS() {
   return (
-    <Layout>
-      <Fill>
-        <Heading>
-          <Link href="https://github.com" target="_blank" textColor="quaternary">
-            Github
-          </Link>
-        </Heading>
-      </Fill>
-      <Fill>
-        <Heading textColor="quaternary">
-          <Link href="https://bitbucket.com" target="_blank" textColor="quaternary">
-            Bitbucket
-          </Link>
-        </Heading>
-      </Fill>
-    </Layout>
+    <div>
+      <Heading>
+        <Link href="https://github.com" target="_blank" textColor="quaternary">
+          Github
+        </Link>
+      </Heading>
+      <Heading textColor="quaternary" margin="30px auto">
+        <Link href="https://bitbucket.com" target="_blank" textColor="quaternary">
+          Bitbucket
+        </Link>
+      </Heading>
+      <Heading textColor="quaternary">
+        <Link href="https://about.gitlab.com/" target="_blank" textColor="quaternary">
+          GitLab
+        </Link>
+      </Heading>
+    </div>
   );
 }

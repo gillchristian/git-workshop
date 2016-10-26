@@ -22,6 +22,7 @@ import {
   Text
 } from "spectacle";
 
+// Import slides
 import Intro from "./01.Intro";
 import Me from "./02.Me";
 import Roadmap from "./03.Roadmap";
@@ -40,7 +41,11 @@ import Branches from "./15.Branches";
 import UpdateAndMerge from "./16.UpdateAndMerge";
 import Logs from "./17.Logs";
 import Resources from "./18.Resources";
-import Thanks from "./19.Thanks";
+import Questions from "./19.Questions";
+import Thanks from "./20.Thanks";
+
+// Import notes
+import {notes, titlelize} from './notes'
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -51,7 +56,6 @@ import createTheme from "spectacle/lib/themes/default";
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
-
 
 const images = {
   allTheThings: require("../assets/all-the-things.jpg"),
@@ -83,16 +87,16 @@ export default class Presentation extends React.Component {
     return (
       <Spectacle theme={theme}>
         <Deck transition={["slide"]} transitionDuration={750}>
-          <Slide bgColor="secondary">
+          <Slide bgColor="secondary" notes={titlelize(notes.intro)}>
             <Intro image={images.gitLogo.replace("/", "")}/>
           </Slide>
-          <Slide bgColor="primary">
+          <Slide bgColor="primary" notes={titlelize(notes.me)}>
             <Me />
           </Slide>
-          <Slide bgColor="secondary">
+          <Slide bgColor="secondary" notes={titlelize(notes.roadmap)}>
             <Roadmap />
           </Slide>
-          <Slide bgColor="primary">
+          <Slide bgColor="primary" notes={titlelize(notes.problem)}>
             <Problem
               images={{
                 mess: images.foldersMess.replace("/", ""),
@@ -100,49 +104,84 @@ export default class Presentation extends React.Component {
               }}
             />
           </Slide>
-          <Slide bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+          <Slide
+            bgImage={images.city.replace("/", "")}
+            bgDarken={0.75}
+            notes={titlelize(notes.solution)}
+          >
             <Solution />
           </Slide>
-          <Slide transition={["slide"]} bgColor="tertiary">
+          <Slide
+            transition={["slide"]}
+            bgColor="tertiary"
+            notes={titlelize(notes.allTheThings)}
+          >
             <AllTheThings image={images.allTheThings.replace("/", "")} />
           </Slide>
-          <Slide bgColor="secondary" align="center center">
+          <Slide
+            bgColor="secondary"
+            align="center center"
+            notes={titlelize(notes.git)}
+          >
             <Git image={images.gitLogo.replace("/", "")} />
           </Slide>
-          <Slide bgImage={images.setup.replace("/", "")} bgDarken={0.75}>
+          <Slide
+            bgImage={images.setup.replace("/", "")}
+            bgDarken={0.75}
+            notes={titlelize(notes.setup)}
+          >
             <Setup />
           </Slide>
-          <Slide bgImage={images.client.replace("/", "")} bgDarken={0.75}>
+          <Slide
+            bgImage={images.client.replace("/", "")}
+            bgDarken={0.75}
+            notes={titlelize(notes.clients)}
+          >
             <Clients />
           </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="secondary">
+          <Slide
+            transition={["spin", "slide"]}
+            bgColor="secondary"
+            notes={titlelize(notes.gaas)}
+          >
             <GaaS />
           </Slide>
-          <Slide bgColor="primary" bgColor="#4c0d09">
+          <Slide
+            bgColor="primary"
+            bgColor="#4c0d09"
+            notes={titlelize(notes.howItWorks)}
+          >
             <HowItWorks image={images.howGitWorks.replace("/", "")} />
           </Slide>
-          <Slide bgColor="primary">
+          <Slide bgColor="primary" notes={titlelize(notes.create)}>
             <Create />
           </Slide>
-          <Slide bgColor="primary">
+          <Slide bgColor="primary" notes={titlelize(notes.addCommit)}>
             <AddCommit />
           </Slide>
-          <Slide bgColor="primary">
+          <Slide bgColor="primary" notes={titlelize(notes.push)}>
             <Push />
           </Slide>
-          <Slide bgColor="black">
+          <Slide bgColor="black" notes={titlelize(notes.branches)}>
             <Branches image={images.branches.replace("/", "")} />
           </Slide>
-          <Slide bgColor="primary">
+          <Slide bgColor="primary" notes={titlelize(notes.updateAndMerge)}>
             <UpdateAndMerge />
           </Slide>
-          <Slide bgColor="primary">
+          <Slide bgColor="primary" notes={titlelize(notes.logs)}>
             <Logs />
           </Slide>
-          <Slide bgColor="primary">
+          <Slide bgColor="primary" notes={titlelize(notes.resources)}>
             <Resources />
           </Slide>
-          <Slide bgColor="secondary">
+          <Slide bgColor="tertiary" notes={titlelize(notes.questions)}>
+            <Questions />
+          </Slide>
+          <Slide
+            bgColor="secondary"
+            transition={["spin", "slide"]}
+            notes={titlelize(notes.thanks)}
+          >
             <Thanks image={images.thanks.replace("/", "")} />
           </Slide>
         </Deck>

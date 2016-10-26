@@ -22,7 +22,7 @@ export default function Create() {
   return (
     <div>
       <Heading size={2} textColor="tertiary">
-        Repositorios
+        Crear y Clonar
       </Heading>
       <CodePane
         style={{fontSize: 22}}
