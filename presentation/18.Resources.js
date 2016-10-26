@@ -9,6 +9,10 @@ import {
 
 const resources = [
   {
+    text: 'Pro Git',
+    url: 'https://git-scm.com/book/es/v1'
+  },
+  {
     text: 'Github Student Developer Pack',
     url: 'https://education.github.com/pack'
   },

@@ -34,6 +34,7 @@ import Setup from "./08.Setup";
 import Clients from "./09.Clients";
 import GaaS from "./10.GaaS";
 import HowItWorks from "./11.HowItWorks";
+import Config from "./11.1.Config";
 import Create from "./12.Create";
 import AddCommit from "./13.AddCommit";
 import Push from "./14.Push";
@@ -156,6 +157,9 @@ export default class Presentation extends React.Component {
             notes={titlelize(notes.howItWorks)}
           >
             <HowItWorks image={images.howGitWorks.replace("/", "")} />
+          </Slide>
+          <Slide bgColor="primary" notes={titlelize(notes.create)}>
+            <Config />
           </Slide>
           <Slide bgColor="primary" notes={titlelize(notes.create)}>
             <Create />
