@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica;
+  background-color: #FDE9C5;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:link,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
